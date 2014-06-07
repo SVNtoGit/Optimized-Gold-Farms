@@ -1,9 +1,9 @@
 <HBProfile>
-<Name>Auchenai Crypts - Gold Optimized</Name>
+<Name>Mana Tombs - Gold Optimized</Name>
 <MinFreeBagSlots>-1</MinFreeBagSlots>
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Profile Developer: Echo
-// Farm zone: Auchenai Crypts
+// Farm zone: Mana Tombs
 // Farm mobs: All
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -134,7 +134,7 @@
 
 			" />
 
-<If Condition="!(Me.MapId == 558)" >
+<If Condition="!(Me.MapId == 557)" >
 
 		<While Condition="!(Me.MapId == 530)" >
 			<If Condition="Me.IsAlliance" >
@@ -432,91 +432,86 @@
 </If>
 
 <While Condition="true" >
-	<If Condition="!(Me.MapId == 558)" >
+	<If Condition="!(Me.MapId == 557)" >
 		<If Condition="Me.Location.Distance(new WoWPoint(-3392.553, 4960.243, 8.39039)) &gt;= 331.2615" > <!-- Universal Nav-to -->
 			<CustomBehavior File="UserSettings" FindVendorsAutomatically="False" LootMobs="True" PullDistance="30" LogoutForInactivity="False" />
 			<CustomBehavior File="FlyTo" X="-3385.121" Y="4941.416" Z="-54.78403" />  <!-- Mid-Hub -->
-			<CustomBehavior File="FlyTo" X="-3363.058" Y="5047.969" Z="-79.39336" />
-			<CustomBehavior File="MyCTM" X="-3361.46" Y="5170.593" Z="-101.0491" />
 		</If>
-
-		<If Condition="Me.Location.Distance(new WoWPoint(-3535.028, 4942.239, -101.3962)) &lt;= 20" > <!-- If we just vendored -->
-			<CustomBehavior File="FlyTo" X="-3363.058" Y="5047.969" Z="-79.39336" />
-			<CustomBehavior File="MyCTM" X="-3361.46" Y="5170.593" Z="-101.0491" />
+		<If Condition="Me.Location.Distance(new WoWPoint(-3122.694, 4942.846, -101.2213)) &gt;= 46.01732" >
+			<CustomBehavior File="FlyTo" X="-3231.709" Y="4943.628" Z="-93.40585" />
+			<CustomBehavior File="MyCTM" X="-3116.793" Y="4945.298" Z="-101.9928" />
 		</If>
 	</If>
 
 	<While Condition="(Me.FreeBagSlots &gt;= 11)" >
-		<If Condition="!(Me.MapId == 558)" >
-			<MoveTo X="-3361.847" Y="5218.072" Z="-101.0482" />
+		<If Condition="!(Me.MapId == 557)" >
+			<MoveTo X="-3082.419" Y="4943.42" Z="-101.0463" />
 			<CustomBehavior File="RunMacro" Macro="/script ResetInstances()" /> 
-			<CustomBehavior File="Message" Text="Entering Auchenai Crypts." LogColor="Lime" />
-			<CustomBehavior File="MyCTM" X="-3362.656" Y="5233.142" Z="-101.048" />
+			<CustomBehavior File="Message" Text="Entering Mana Tombs." LogColor="Lime" />
+			<CustomBehavior File="MyCTM" X="-3072.468" Y="4943.154" Z="-101.0463" />
 			<CustomBehavior File="WaitTimer" WaitTime="5500" />
 			<While Condition="!(StyxWoW.IsInWorld)" >
 				<CustomBehavior File="WaitTimer" WaitTime="1000" />
 			</While>
 		</If>
 		<!-- Begin Instance Grind -->
-		<If Condition="(Me.MapId == 558)" >
+		<If Condition="(Me.MapId == 557)" >
 			<CustomBehavior File="Misc\InstanceTimer" Timer="Start" />
 			<CustomBehavior File="Misc\RunLUA" Lua="startingmoney = GetMoney();" /> 
 			<CustomBehavior File="Misc\RunLUA" Lua="cstartingmoney = GetMoney();" /> 
 			<CustomBehavior File="Misc\RunLUA" Lua="scurrdungeon = GetTime();" /> 
 
-			<RunTo X="33.74844" Y="-0.630427" Z="-0.1248157" />
+			<DisableBehavior Name="Combat" />
+			<RunTo X="-16.80901" Y="1.030072" Z="-0.954329" />
+			<RunTo X="-68.0435" Y="-136.9184" Z="-0.9722393" /> //Boss
+			<EnableBehavior Name="Combat" />
+
+			<RunTo X="-68.3775" Y="-144.6523" Z="-0.9561071" />
 
 			<CustomBehavior File="RunLikeHell" AllowCombat="false" NumOfTimes="1" >
-				<Hotspot X="85.48123" Y="39.70464" Z="4.262386" />
-				<Hotspot X="89.28381" Y="8.471476" Z="-0.06451596" />
-				<Hotspot X="76.3402" Y="-10.28817" Z="0.2821189" />
-				<Hotspot X="92.00609" Y="-39.50627" Z="4.261407" />
-				<Hotspot X="125.7242" Y="5.015305" Z="-0.1297353" />
-				<Hotspot X="149.733" Y="39.40773" Z="4.259059" />
-				<Hotspot X="188.8549" Y="3.964344" Z="-0.1232965" />
-				<Hotspot X="238.0906" Y="13.98984" Z="-0.0640922" />
-				<Hotspot X="248.4002" Y="-11.97912" Z="-0.07495958" />
-				<Hotspot X="262.194" Y="8.858376" Z="4.136531" /> //LoS
+				<Hotspot X="-61.43065" Y="-174.031" Z="-1.009858" />
+				<Hotspot X="-63.12685" Y="-191.2188" Z="-1.703829" />
+				<Hotspot X="-38.37562" Y="-198.4327" Z="-0.2362401" />
+				<Hotspot X="-28.22877" Y="-219.2819" Z="0.1598396" />
+				<Hotspot X="-98.29636" Y="-240.179" Z="0.2557542" />
+				<Hotspot X="-118.4999" Y="-198.8715" Z="-1.125831" />
+				<Hotspot X="-156.9006" Y="-223.5131" Z="-0.9543628" />
+				<Hotspot X="-191.3721" Y="-226.9792" Z="-0.9543628" />
+				<Hotspot X="-221.8884" Y="-217.1153" Z="-0.6970484" />
+				<Hotspot X="-253.1384" Y="-177.5203" Z="-0.9527512" />
+				<Hotspot X="-253.0494" Y="-162.5546" Z="-0.8904037" />
+				<Hotspot X="-297.0168" Y="-203.995" Z="-1.683555" />
+				<Hotspot X="-327.7555" Y="-225.4176" Z="-0.9572976" />
 			</CustomBehavior>
 
-
-			<RunTo X="267.8954" Y="29.45913" Z="13.43622" />
+			<RunTo X="-356.417" Y="-223.2754" Z="-0.9587091" />
 
 			<CustomBehavior File="RunLikeHell" AllowCombat="false" NumOfTimes="1" >
-				<Hotspot X="225.2872" Y="-165.6645" Z="26.59217" />
-				<Hotspot X="113.8322" Y="-163.0328" Z="14.17562" />
-				<Hotspot X="-73.3963" Y="-162.7334" Z="26.54875" /> <!-- Shirrak the Dead Watcher -->
-				<Hotspot X="-64.43861" Y="-183.3418" Z="26.28424" /> //LoS
+				<Hotspot X="-373.3704" Y="-107.2118" Z="-0.9600735" />
+				<Hotspot X="-391.1584" Y="-64.5545" Z="-0.9784701" />
+				<Hotspot X="-354.8347" Y="-69.68562" Z="-0.9602346" />
+				<Hotspot X="-372.945" Y="-38.24996" Z="-0.9602063" />
+				<Hotspot X="-372.7962" Y="7.895702" Z="7.917375" />
+				<Hotspot X="-284.1698" Y="-8.572141" Z="16.68573" />
+				<Hotspot X="-252.9226" Y="10.58179" Z="16.89592" />
+				<Hotspot X="-183.3848" Y="8.853148" Z="16.73916" />
 			</CustomBehavior>
 
+			<RunTo X="-165.0837" Y="8.724791" Z="16.78777" />
+			<RunTo X="-95.39121" Y="-51.76127" Z="16.78783" />
+			<CustomBehavior File="MyCTM" X="-78.64133" Y="-62.85951" Z="-0.6658678" />
 
-			<RunTo X="-86.33018" Y="-162.9736" Z="26.58985" />
+			<RunTo X="-0.7623158" Y="1.010749" Z="-0.9534453" />
 
-			<CustomBehavior File="RunLikeHell" AllowCombat="false" NumOfTimes="1" >
-				<Hotspot X="-125.3437" Y="-166.7451" Z="26.58985" />
-				<Hotspot X="-137.3347" Y="-252.3579" Z="26.60792" />
-				<Hotspot X="-160.5051" Y="-277.7302" Z="26.75698" />
-				<Hotspot X="-139.2198" Y="-312.7704" Z="26.59216" />
-				<Hotspot X="-145.1646" Y="-339.703" Z="26.59216" />
-				<Hotspot X="-142.3699" Y="-385.0722" Z="26.59075" />
-				<Hotspot X="-60.58965" Y="-401.9025" Z="29.25527" />
-				<Hotspot X="-32.30061" Y="-365.6765" Z="26.5876" />
-				<Hotspot X="-10.90886" Y="-402.7732" Z="23.24094" />
-				<Hotspot X="15.01026" Y="-369.0821" Z="25.96285" />
-				<Hotspot X="70.46895" Y="-389.265" Z="26.58933" /> <!-- Exarch Maladaar -->
-			</CustomBehavior>
-
-			<RunTo X="-22.57451" Y="0.7706324" Z="-0.1192664" /> <!-- Long run to entrance -->
-
+			<CustomBehavior File="Misc\InstanceTimer" Timer="Check" />
 			<CustomBehavior File="Misc\RunLUA" Lua="endingmoney = GetMoney();" /> 
 			<CustomBehavior File="Misc\RunLUA" Lua="ecurrdungeon = GetTime();" /> 
 			<CustomBehavior File="Misc\RunLUA" Lua="lastdungeon = math.floor(ecurrdungeon-scurrdungeon)" /> 
 			<CustomBehavior File="Misc\RunLUA" Lua="progressmoney = math.floor(endingmoney-startingmoney);" />
 			<CustomBehavior File="Misc\RunLUA" Lua="totalmoney = math.floor(endingmoney-beginningmoney);" />
 			<CustomBehavior File="Misc\RunLUA" Lua="print(&quot;|cFF0099FFStatistics so far:|r\nYou've picked up &quot;, GetCoinTextureString(progressmoney), &quot; from this run.\n&quot;, &quot;So far, you've made &quot;, GetCoinTextureString(totalmoney), &quot; total.&quot;)" />
-
-			<CustomBehavior File="Misc\InstanceTimer" Timer="Check" />
-			<CustomBehavior File="MyCTM" X="-29.3374" Y="0.3493616" Z="-0.1192664" />
+			
+			<CustomBehavior File="MyCTM" X="7.765326" Y="0.9056869" Z="-0.9534453" />
 			<CustomBehavior File="WaitTimer" WaitTime="5500" />
 			<While Condition="!(StyxWoW.IsInWorld)" >
 				<CustomBehavior File="WaitTimer" WaitTime="1000" />
